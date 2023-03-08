@@ -1,31 +1,39 @@
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RegistrationTests {
-    WebDriver wd;
+public class RegistrationTests extends TestBase {
+//    WebDriver wd;
 
-    @BeforeMethod
-public void preCondition(){
-        wd=new ChromeDriver();
-        wd.navigate().to("https://telranedu.web.app/home");
-    }
+   @BeforeMethod
+   public void preCondition(){
+       if(isLogged()){
+           logout();
+       }
+   }
+   /*     public void preCondition(){
+       wd=new ChromeDriver();
+       wd.navigate().to("https://telranedu.web.app/home");
+       wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    }*/
 
     @Test
    public void regPositiveTest(){
       //open login
 
-        WebElement loginButt = wd.findElement(By.xpath("//a[@href='/login']"));
-        loginButt.click();
+    //    WebElement loginButt = wd.findElement(By.xpath("//a[@href='/login']"));
+    //    loginButt.click();
         //fill login form
+        openLoginRegistration();
         int i = (int)(System.currentTimeMillis() / 1000) % 3600;// int переобразовуем в интеджер
-        WebElement emailImp = wd.findElement(By.xpath("//input[1]"));
+        String email = "yarik777"+ i +"@gmail.com";
+        String password = "987654Yy$";
+        fillLoginRegistrationForm(email,password);
+        /*      WebElement emailImp = wd.findElement(By.xpath("//input[1]"));
         emailImp.click();
         emailImp.clear();
         emailImp.sendKeys("yarik777"+ i +"@gmail.com");//konkotinazy
@@ -34,43 +42,46 @@ public void preCondition(){
         password.click();
         password.clear();
         password.sendKeys("987654Yy$");
+
         //submit by click registration
-        wd.findElement(By.xpath("//button[2]")).click();
-//    Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
+        wd.findElement(By.xpath("//button[2]")).click();*/
+        submitRegistration();
+ //1,2       pause(5000);
+
+    Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
     }
-    @Test
+ //   public void pause(int time){
+
+ //2       FluentWait<WebDriver> wait = new FluentWait<>(wd);
+ //2       wait.withTimeout(Duration.ofSeconds(time));
+  //1      try {
+  //1          Thread.sleep(time);
+  //1      } catch (InterruptedException e) {
+  //1          throw new RuntimeException(e);
+  //1      }
+  //  }
+
+     @Test
     public void registrationWrongEmail(){
-        WebElement login = wd.findElement(By.xpath("//a[@href='/login']"));
-        login.click();
-        WebElement inp1 = wd.findElement(By.xpath("//input[1]"));
-        inp1.click();;
-        inp1.clear();
-        inp1.sendKeys("natalia.gmail.com");
+         openLoginRegistration();
+         int i = (int)(System.currentTimeMillis() / 1000) % 3600;
+         String email = "yarik777"+ i +"gmail.com";
+         String password = "987654Yy$";
+         fillLoginRegistrationForm(email,password);
+         submitRegistration();
 
-        WebElement passworD = wd.findElement(By.xpath("//input[2]"));
-        passworD.click();
-        passworD.clear();
-        passworD.sendKeys("1234567Nn$");
-
-        wd.findElement(By.xpath("//button[2]")).click();
-
-    //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
+        //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
     }
     @Test
     public void registrationWrongPassword(){
-        WebElement loginP = wd.findElement(By.xpath("//a[@href='/login']"));
-        loginP.click();
-        WebElement emaiL = wd.findElement(By.xpath("//input[1]"));
-        emaiL.click();
-        emaiL.clear();
-        emaiL.sendKeys("yarik777@gmail.com");
+        openLoginRegistration();
+        int i = (int)(System.currentTimeMillis() / 1000) % 3600;
+        String email = "yarik777"+ i +"@gmail.com";
+        String password = "987654$";
+        fillLoginRegistrationForm(email,password);
+        submitRegistration();
+        //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
 
-        WebElement passwordN = wd.findElement(By.xpath("//input[2]"));
-        passwordN.click();
-        passwordN.clear();
-        passwordN.sendKeys("123456N");
-
-        wd.findElement(By.xpath("//button[2]")).click();
     }
 
     @AfterMethod
