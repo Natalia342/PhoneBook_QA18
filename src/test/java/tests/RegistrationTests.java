@@ -1,5 +1,6 @@
+package tests;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -8,12 +9,13 @@ import org.testng.annotations.Test;
 public class RegistrationTests extends TestBase {
 //    WebDriver wd;
 
-   @BeforeMethod
-   public void preCondition(){
-       if(isLogged()){
-           logout();
-       }
-   }
+    @BeforeMethod
+    public void preCondition(){
+        if(app.getUser().isLogged()){
+            app.getUser().logout();
+        }
+    }
+
    /*     public void preCondition(){
        wd=new ChromeDriver();
        wd.navigate().to("https://telranedu.web.app/home");
@@ -28,11 +30,11 @@ public class RegistrationTests extends TestBase {
     //    WebElement loginButt = wd.findElement(By.xpath("//a[@href='/login']"));
     //    loginButt.click();
         //fill login form
-        openLoginRegistration();
+        app.getUser(). openLoginRegistration();
         int i = (int)(System.currentTimeMillis() / 1000) % 3600;// int переобразовуем в интеджер
         String email = "yarik777"+ i +"@gmail.com";
         String password = "987654Yy$";
-        fillLoginRegistrationForm(email,password);
+        app.getUser(). fillLoginRegistrationForm(email,password);
         /*      WebElement emailImp = wd.findElement(By.xpath("//input[1]"));
         emailImp.click();
         emailImp.clear();
@@ -45,10 +47,11 @@ public class RegistrationTests extends TestBase {
 
         //submit by click registration
         wd.findElement(By.xpath("//button[2]")).click();*/
-        submitRegistration();
+        app.getUser(). submitRegistration();
  //1,2       pause(5000);
 
-    Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
+ //   Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
+    Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//a[text()='ADD']")));
     }
  //   public void pause(int time){
 
@@ -63,29 +66,29 @@ public class RegistrationTests extends TestBase {
 
      @Test
     public void registrationWrongEmail(){
-         openLoginRegistration();
+         app.getUser().openLoginRegistration();
          int i = (int)(System.currentTimeMillis() / 1000) % 3600;
          String email = "yarik777"+ i +"gmail.com";
          String password = "987654Yy$";
-         fillLoginRegistrationForm(email,password);
-         submitRegistration();
+         app.getUser().fillLoginRegistrationForm(email,password);
+         app.getUser().submitRegistration();
 
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
     }
     @Test
     public void registrationWrongPassword(){
-        openLoginRegistration();
+        app.getUser(). openLoginRegistration();
         int i = (int)(System.currentTimeMillis() / 1000) % 3600;
         String email = "yarik777"+ i +"@gmail.com";
         String password = "987654$";
-        fillLoginRegistrationForm(email,password);
-        submitRegistration();
+        app.getUser().fillLoginRegistrationForm(email,password);
+        app.getUser().submitRegistration();
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
 
     }
 
     @AfterMethod
-    public void postCondition(){
+    public void tearDown(){
  //       wd.quit();
     }
 }

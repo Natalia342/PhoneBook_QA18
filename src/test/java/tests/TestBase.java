@@ -1,42 +1,41 @@
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+package tests;
+
+import manager.ApplicationManager;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import java.util.concurrent.TimeUnit;
-
 public class TestBase {
-    WebDriver wd;
-
+//    WebDriver wd;
+    public static ApplicationManager app = new ApplicationManager();
 //    @BeforeMethod ..перед всеми тоько в классе. определленные
     @BeforeSuite //перед всеми тестами
-    public void preCondition(){
-        wd=new ChromeDriver();
-        wd.navigate().to("https://telranedu.web.app/home");
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    public void setUp(){
+
+        app.init();
     }
+    //    public void preCondition(){
+    //     wd=new ChromeDriver();
+    // wd.navigate().to("https://telranedu.web.app/home");
+    //  wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+   // }
  //  @AfterMethod
     @AfterSuite
-    public void postCondition(){
+    public void tearDown(){
         //       wd.quit();
+        app.stop();
     }
 
-    public void logout(){
+ /* per   public void logout(){
         click(By.xpath("//button[.='Sign Out']"));
     }
     public boolean isLogged(){
         return isElementPresent(By.xpath("//button[.='Sign Out']"));
     }
-    public boolean isElementPresent(By locator){
+ //per   public boolean isElementPresent(By locator){
         return (wd.findElements(locator).size() > 0);
-    }
+    }*/
 
-    public void openLoginRegistration() {
+ /*per   public void openLoginRegistration() {
    //     wd.findElement(By.xpath("//a[@href='/login']")).click();
          click(By.xpath("//a[@href='/login']"));
     }
@@ -50,16 +49,16 @@ public class TestBase {
     public void submitLogin(){
         click(By.xpath("//button[1]"));
     }
-    public void click(By locator){
-        wd.findElement(locator).click();
-    }
-    public void type(By locator, String text){
+    //per public void click(By locator){
+   //     wd.findElement(locator).click();
+   // }
+ /* per   public void type(By locator, String text){
         if(text !=null){
             WebElement element = wd.findElement(locator);
             element.click();
             element.clear();
             element.sendKeys(text);
         }
-    }
+    }*/
 
 }
