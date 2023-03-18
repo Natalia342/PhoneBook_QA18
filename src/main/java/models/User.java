@@ -16,7 +16,6 @@ public class User {
         this.email = email;
         return this;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -24,7 +23,6 @@ public class User {
         this.password = password;
         return this;
     }
-
     public String getEmail() {
         return email;
     }
