@@ -1,5 +1,6 @@
 package tests;
 
+import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -32,9 +33,13 @@ public class RegistrationTests extends TestBase {
         //fill login form
         app.getUser(). openLoginRegistration();
         int i = (int)(System.currentTimeMillis() / 1000) % 3600;// int переобразовуем в интеджер
-        String email = "yarik777"+ i +"@gmail.com";
-        String password = "987654Yy$";
-        app.getUser(). fillLoginRegistrationForm(email,password);
+        User user= User.builder()
+                .email("yarik777"+ i +"@gmail.com")
+                .password("987"+i+"Yy$")
+                .build();
+   //     String email = "yarik777"+ i +"@gmail.com";
+   //     String password = "987654Yy$";
+        app.getUser(). fillLoginRegistrationForm(user);
         /*      WebElement emailImp = wd.findElement(By.xpath("//input[1]"));
         emailImp.click();
         emailImp.clear();
@@ -68,9 +73,13 @@ public class RegistrationTests extends TestBase {
     public void registrationWrongEmail(){
          app.getUser().openLoginRegistration();
          int i = (int)(System.currentTimeMillis() / 1000) % 3600;
-         String email = "yarik777"+ i +"gmail.com";
-         String password = "987654Yy$";
-         app.getUser().fillLoginRegistrationForm(email,password);
+         User user= User.builder()
+                 .email("yarik777"+ i +"gmail.com")
+                 .password("987"+i+"Yy$")
+                 .build();
+    //     String email = "yarik777"+ i +"gmail.com";
+    //     String password = "987654Yy$";
+         app.getUser().fillLoginRegistrationForm(user);
          app.getUser().submitRegistration();
 
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
@@ -79,9 +88,13 @@ public class RegistrationTests extends TestBase {
     public void registrationWrongPassword(){
         app.getUser(). openLoginRegistration();
         int i = (int)(System.currentTimeMillis() / 1000) % 3600;
-        String email = "yarik777"+ i +"@gmail.com";
-        String password = "987654$";
-        app.getUser().fillLoginRegistrationForm(email,password);
+        User user= User.builder()
+                .email("yarik777"+ i +"@gmail.com")
+                .password("987"+i+"$")
+                .build();
+    //    String email = "yarik777"+ i +"@gmail.com";
+    //    String password = "987654$";
+        app.getUser().fillLoginRegistrationForm(user);
         app.getUser().submitRegistration();
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
 
