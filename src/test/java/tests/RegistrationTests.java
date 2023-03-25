@@ -82,6 +82,9 @@ public class RegistrationTests extends TestBase {
          app.getUser().fillLoginRegistrationForm(user);
          app.getUser().submitRegistration();
 
+
+         Assert.assertTrue(app.getUser().isErrorFormatMessage());
+         Assert.assertTrue(app.getUser().isAlertPresent());//метод закроет аллерт
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
     }
     @Test
@@ -96,6 +99,9 @@ public class RegistrationTests extends TestBase {
     //    String password = "987654$";
         app.getUser().fillLoginRegistrationForm(user);
         app.getUser().submitRegistration();
+
+        Assert.assertTrue(app.getUser().isErrorFormatMessage());
+        Assert.assertTrue(app.getUser().isAlertPresent());//метод закроет аллерт
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
 
     }
