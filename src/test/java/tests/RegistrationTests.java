@@ -37,6 +37,8 @@ public class RegistrationTests extends TestBase {
                 .email("yarik777"+ i +"@gmail.com")
                 .password("987"+i+"Yy$")
                 .build();
+        logger.info("registrationPositiveTest starts with: " + user.getEmail()+" & "+ user.getPassword());
+
    //     String email = "yarik777"+ i +"@gmail.com";
    //     String password = "987654Yy$";
         app.getUser(). fillLoginRegistrationForm(user);
@@ -54,7 +56,7 @@ public class RegistrationTests extends TestBase {
         wd.findElement(By.xpath("//button[2]")).click();*/
         app.getUser(). submitRegistration();
  //1,2       pause(5000);
-
+        logger.info("registrationPositiveTest completed");
  //   Assert.assertTrue(wd.findElement(By.xpath("//a[text()='ADD']")).getText().equals("ADD"));
     Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//a[text()='ADD']")));
     }
@@ -97,8 +99,11 @@ public class RegistrationTests extends TestBase {
                 .build();
     //    String email = "yarik777"+ i +"@gmail.com";
     //    String password = "987654$";
+
         app.getUser().fillLoginRegistrationForm(user);
         app.getUser().submitRegistration();
+
+
 
         Assert.assertTrue(app.getUser().isErrorFormatMessage());
         Assert.assertTrue(app.getUser().isAlertPresent());//метод закроет аллерт

@@ -1,6 +1,8 @@
 package tests;
 
 import manager.ApplicationManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -8,6 +10,7 @@ public class TestBase {
 //    WebDriver wd;
     public static ApplicationManager app = new ApplicationManager();
 //    @BeforeMethod ..перед всеми тоько в классе. определленные
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
     @BeforeSuite //перед всеми тестами
     public void setUp(){
 
