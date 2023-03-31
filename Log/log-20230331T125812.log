@@ -1,0 +1,27 @@
+12:58:14.660  INFO  tests.TestBase ### Start testloginWrongEmail
+12:58:14.664  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+12:58:24.708  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+12:58:24.712  INFO  manager.MyListener Start searching element byBy.xpath: //a[@href='/login']
+12:58:24.738  INFO  manager.MyListener The element with locator byBy.xpath: //a[@href='/login']is found successfully
+12:58:24.803  INFO  manager.MyListener Start searching element byBy.xpath: //inp
+12:58:34.868  INFO  manager.MyListener Something went wrong!
+12:58:34.868  INFO  manager.MyListener no such element: Unable to locate element: {"method":"xpath","selector":"//inp"}
+  (Session info: chrome=111.0.5563.147)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SND699A', ip: '192.168.1.13', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\Asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a36fee12253bd1ba39aca1142f484e0d
+*** Element info: {Using=xpath, value=//inp}
+12:58:34.869  INFO  manager.MyListener no such element: Unable to locate element: {"method":"xpath","selector":"//inp"}
+  (Session info: chrome=111.0.5563.147)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SND699A', ip: '192.168.1.13', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\Asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a36fee12253bd1ba39aca1142f484e0d
+*** Element info: {Using=xpath, value=//inp}
+12:58:35.229  INFO  manager.MyListener Here is the link to screenshot with error: src/test/screenshots/screenshot-3514.png
+12:58:35.232  INFO  tests.TestBase ### Finished###
