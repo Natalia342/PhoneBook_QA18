@@ -1,0 +1,12 @@
+13:13:04.413  INFO  tests.TestBase ### Start testloginWrongPassword
+13:13:04.421  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+13:13:14.464  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+13:13:14.467  INFO  manager.MyListener Start searching element byBy.xpath: //a[@href='/login']
+13:13:14.496  INFO  manager.MyListener The element with locator byBy.xpath: //a[@href='/login']is found successfully
+13:13:14.560  INFO  manager.MyListener Start searching element byBy.xpath: //input[1]
+13:13:14.588  INFO  manager.MyListener The element with locator byBy.xpath: //input[1]is found successfully
+13:13:14.722  INFO  manager.MyListener Start searching element byBy.xpath: //input[2]
+13:13:14.747  INFO  manager.MyListener The element with locator byBy.xpath: //input[2]is found successfully
+13:13:14.856  INFO  manager.MyListener Start searching element byBy.xpath: //button[1]
+13:13:14.870  INFO  manager.MyListener The element with locator byBy.xpath: //button[1]is found successfully
+13:13:14.908  INFO  tests.TestBase ### Finished###
