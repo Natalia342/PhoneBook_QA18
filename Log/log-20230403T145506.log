@@ -1,0 +1,51 @@
+14:55:09.515  INFO  tests.TestBase ### Start testloginPositive
+14:55:09.521  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+14:55:19.556  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+14:55:19.560  INFO  manager.MyListener Start searching element byBy.xpath: //a[@href='/login']
+14:55:19.587  INFO  manager.MyListener The element with locator byBy.xpath: //a[@href='/login']is found successfully
+14:55:19.647  INFO  manager.MyListener Start searching element byBy.xpath: //input[1]
+14:55:19.664  INFO  manager.MyListener The element with locator byBy.xpath: //input[1]is found successfully
+14:55:19.799  INFO  manager.MyListener Start searching element byBy.xpath: //input[2]
+14:55:19.815  INFO  manager.MyListener The element with locator byBy.xpath: //input[2]is found successfully
+14:55:19.932  INFO  manager.MyListener Start searching element byBy.xpath: //button[1]
+14:55:19.960  INFO  manager.MyListener The element with locator byBy.xpath: //button[1]is found successfully
+14:55:19.995  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+14:55:21.491  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+14:55:21.496  INFO  tests.TestBase ### Finished###
+14:55:21.499  INFO  tests.TestBase ### Start testloginWrongEmail
+14:55:21.500  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+14:55:21.520  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+14:55:21.520  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+14:55:21.539  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+14:55:21.581  INFO  manager.MyListener Start searching element byBy.xpath: //a[@href='/login']
+14:55:21.598  INFO  manager.MyListener The element with locator byBy.xpath: //a[@href='/login']is found successfully
+14:55:21.636  INFO  manager.MyListener Start searching element byBy.xpath: //input[1]
+14:55:21.645  INFO  manager.MyListener The element with locator byBy.xpath: //input[1]is found successfully
+14:55:21.788  INFO  manager.MyListener Start searching element byBy.xpath: //input[2]
+14:55:21.798  INFO  manager.MyListener The element with locator byBy.xpath: //input[2]is found successfully
+14:55:21.933  INFO  manager.MyListener Start searching element byBy.xpath: //button[1]
+14:55:21.954  INFO  manager.MyListener The element with locator byBy.xpath: //button[1]is found successfully
+14:55:21.992  INFO  tests.TestBase ### Finished###
+14:55:21.993  INFO  tests.TestBase ### Start testloginWrongPassword
+14:55:21.994  INFO  manager.MyListener Start searching element byBy.xpath: //button[.='Sign Out']
+14:55:22.697  INFO  manager.MyListener The element with locator byBy.xpath: //button[.='Sign Out']is found successfully
+14:55:22.698  INFO  manager.MyListener Start searching element byBy.xpath: //a[@href='/login']
+14:55:22.723  INFO  manager.MyListener Something went wrong!
+14:55:22.723  INFO  manager.MyListener unexpected alert open: {Alert text : Wrong email or password}
+  (Session info: chrome=111.0.5563.147): Wrong email or password
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SND699A', ip: '192.168.1.13', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\Asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59973}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ab5aa333ab8987309ab7a3fc7a18d5a
+*** Element info: {Using=xpath, value=//a[@href='/login']}
+14:55:22.724  INFO  manager.MyListener unexpected alert open: {Alert text : Wrong email or password}
+  (Session info: chrome=111.0.5563.147): Wrong email or password
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-SND699A', ip: '192.168.1.13', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\Asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59973}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ab5aa333ab8987309ab7a3fc7a18d5a
+*** Element info: {Using=xpath, value=//a[@href='/login']}
+14:55:23.044  INFO  manager.MyListener Here is the link to screenshot with error: src/test/screenshots/screenshot-3322.png
+14:55:23.045  INFO  tests.TestBase ### Finished###
