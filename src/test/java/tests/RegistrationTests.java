@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class RegistrationTests extends TestBase {
 //    WebDriver wd;
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void preCondition(){
         if(app.getUser().isLogged()){
             app.getUser().logout();
@@ -24,7 +24,7 @@ public class RegistrationTests extends TestBase {
 
     }*/
 
-    @Test
+    @Test(groups = {"smoke"})
    public void regPositiveTest(){
       //open login
 
@@ -111,7 +111,7 @@ public class RegistrationTests extends TestBase {
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown(){
  //       wd.quit();
     }
