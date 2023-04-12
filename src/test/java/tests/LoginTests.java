@@ -30,6 +30,16 @@ public class LoginTests extends TestBase {
  //  Assert.assertTrue(isLogged());
     Assert.assertTrue(app.getUser().isLogged());
 }
+    @Test
+    public void loginPositiveConfig(){
+
+        app.getUser().openLoginRegistration();
+        app.getUser().fillLoginRegistrationForm(app.getEmail(), app.getPassword());
+        app.getUser().submitLogin();
+
+        Assert.assertTrue(app.getUser().isLogged());
+    }
+
 @Test(groups = {"smoke","regress"})
     public void loginWrongEmail(){
         User user=User.builder()

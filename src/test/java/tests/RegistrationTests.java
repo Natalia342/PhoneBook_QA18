@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -71,6 +72,19 @@ public class RegistrationTests extends TestBase {
   //1      }
   //  }
 
+    @Test(groups = {"smoke"},dataProvider = "registrationCSV",dataProviderClass = ProviderData.class)
+    public void regPositiveTestCSV(User user){
+
+        app.getUser(). openLoginRegistration();
+        logger.info("registrationPositiveTest starts with: " + user.getEmail()+" & "+ user.getPassword());
+        app.getUser(). fillLoginRegistrationForm(user);
+        app.getUser(). submitRegistration();
+
+        logger.info("registrationPositiveTest completed");
+
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//a[text()='ADD']")));
+    }
+
      @Test
     public void registrationWrongEmail(){
          app.getUser().openLoginRegistration();
@@ -89,6 +103,7 @@ public class RegistrationTests extends TestBase {
          Assert.assertTrue(app.getUser().isAlertPresent());//метод закроет аллерт
         //    Assert.assertTrue(wd.findElement(By.xpath("")).getText().equals("Wrong email or password"));
     }
+
     @Test
     public void registrationWrongPassword(){
         app.getUser(). openLoginRegistration();

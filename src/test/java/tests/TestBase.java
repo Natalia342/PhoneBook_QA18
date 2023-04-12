@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 @Listeners(NGListener.class)
 
@@ -18,7 +19,7 @@ public class TestBase {
 //    @BeforeMethod ..перед всеми тоько в классе. определленные
     Logger logger = LoggerFactory.getLogger(TestBase.class);
     @BeforeSuite (alwaysRun = true)//перед всеми тестами
-    public void setUp(){
+    public void setUp() throws IOException {
 
         app.init();
     }
